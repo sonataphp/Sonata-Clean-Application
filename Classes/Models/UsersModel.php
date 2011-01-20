@@ -30,9 +30,10 @@ class UsersModel extends ORModel {
       if (($this->activated == 0) && ($this->id > 0)) return -1;
       
       if ($this->id > 0) {
-          $this->date_accessed = (string) STDateNow();
-          $this->logincount++;
-          $this->update();
+          $user = new UsersModel();
+          $user->date_accessed = (string) STDateNow();
+          $user->logincount++;
+          $user->update();
           
           $session = new SessionsModel();
           $session->user_id = $this->id;
