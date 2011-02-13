@@ -11,7 +11,7 @@ class Router extends STRouter {
     
     public static function setDefaultRoutes() {
         self::init();
-        self::map('/', array('controller' => 'Home'));
+        self::map('/', array('controller' => 'Home'))->alias("home");
     }
     
 }

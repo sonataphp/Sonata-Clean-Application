@@ -12,6 +12,7 @@ class E404ViewController extends UIViewController {
     public function indexAction() {
         UIApplication::sharedApplication()->sendHeader(UIApplication404Header);
         echo 'Page Not Found';
+        // Here should be output for 404 page (the same way as you'd normally output a view)
     }
     
     // Implement viewDidLoad to do additional setup after loading the view, typically from a phtml.

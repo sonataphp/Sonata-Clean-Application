@@ -8,6 +8,7 @@
 //
 
 define('CFAppPath', dirname(__FILE__).DIRECTORY_SEPARATOR);
+define('CFStandardExceptionHandler', 'NO');
 define('CFDebugErrors', 'YES');
 
 require "SonataFramework/Database.php";
