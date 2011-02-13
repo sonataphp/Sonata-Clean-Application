@@ -1,18 +1,21 @@
-<?php
+<?
 //
 //  E404ViewController.php
-//  __APPLICATION_NAME__
+//  Vedere
 //
-//  Created by __AURTHOR__ on __DATE__.
-//  Copyright __COMPANY__ __YEAR__. All rights reserved.
+//  Created by Doejo on 12/20/2010.
+//  Copyright Vedere 2011. All rights reserved.
 //
 
 class E404ViewController extends UIViewController {
   
     public function indexAction() {
         UIApplication::sharedApplication()->sendHeader(UIApplication404Header);
-        echo 'Page Not Found';
-        // Here should be output for 404 page (the same way as you'd normally output a view)
+        $this->view = new UIView();
+        $this->view->initWithDelegate($this)
+                   ->setLayout("404");
+        $this->bufferizeTemplates();
+        $this->presentViewController();
     }
     
     // Implement viewDidLoad to do additional setup after loading the view, typically from a phtml.
